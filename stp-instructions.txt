@@ -1,0 +1,48 @@
+it can be enabled with
+
+*ovs-vsctl -- clear Bridge br0 sflow*
+
+
+
+
+*802.1D Spanning Tree Protocol (STP)*
+
+
+
+
+Configure bridge *br0* to participate in an 802.1D spanning tree:
+
+
+
+
+*sh ovs-vsctl set Bridge "bridge-name" stp_enable=true*
+
+
+
+
+Set the bridge priority of *br0* to 0x7800:
+
+
+
+
+*sh ovs-vsctl set Bridge "bridge-name" other_config:stp-priority=0x7800*
+
+
+
+
+Set the path cost of port *eth0* to 10:
+
+
+
+
+*sh ovs-vsctl set Port eth0 other_config:stp-path-cost=10*
+
+
+
+
+Deconfigure STP from above:
+
+
+	
+
+*sh ovs-vsctl clear Bridge "bridge-name" stp_enable*
