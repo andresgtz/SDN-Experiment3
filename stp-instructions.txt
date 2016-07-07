@@ -9,6 +9,7 @@ Configure bridge *br0* to participate in an 802.1D spanning tree:
 *sh ovs-vsctl set Bridge "bridge-name" stp_enable=true*
 
 Set the bridge priority of *br0* to 0x7800:
+(hex) only set s1 to that priority, increment priority by 1 each switch
 
 *sh ovs-vsctl set Bridge "bridge-name" other_config:stp-priority=0x7800*
 
